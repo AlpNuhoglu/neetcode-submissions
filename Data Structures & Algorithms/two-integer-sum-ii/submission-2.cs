@@ -1,0 +1,22 @@
+public class Solution {
+    public int[] TwoSum(int[] numbers, int target) {
+        if (numbers.Length == 0 || numbers == null) return [0,0];
+
+        int left = 0; 
+        int right = numbers.Length - 1; 
+
+        while (left < right) {
+
+            if (numbers[left] + numbers[right] == target) {
+                return [left + 1, right + 1]; 
+            } else if (numbers[left] + numbers[right] < target) {
+                left++; 
+            } else {
+                right--; 
+            }
+        }
+
+        return [0,0]; 
+
+    }
+}
